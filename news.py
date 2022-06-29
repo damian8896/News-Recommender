@@ -1,5 +1,4 @@
 # Importing necessary libraries
-import inline as inline
 import pandas as pd
 import numpy as np
 
@@ -7,7 +6,6 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.tokenize import RegexpTokenizer
 import re
-from PIL import Image
 from bs4 import BeautifulSoup as soup
 import requests
 from collections import Counter
