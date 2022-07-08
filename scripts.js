@@ -1,17 +1,34 @@
 let mainpage = document.querySelector(".articles-container");
 let articles = document.getElementsByClassName("articles-outer");
-let thumbs = document.getElementsByClassName("thumbs");
+let thumbsDown = document.getElementsByClassName("thumbs down");
+let thumbsUp = document.getElementsByClassName("thumbs up");
 
 let works = true;
 
-for(let i = 0; i < thumbs.length; i++){
-    thumbs[i].addEventListener("mousedown", event => {
+for(let i = 0; i < thumbsUp.length; i++){
+    thumbsUp[i].addEventListener("mousedown", event => {
         works = false;
-        thumbs[i].style.transform = "translateY(5px)";
-        $(thumbs[i]).toggleClass('selected');
+        thumbsUp[i].style.transform = "translateY(5px)";
+        thumbsUp[i].classList.add("selected");
+        thumbsDown[i].classList.remove("selected");
     });
-    thumbs[i].addEventListener("mouseup", event => {
-        thumbs[i].style.transform = "translateY(0px)";
+    thumbsUp[i].addEventListener("mouseup", event => {
+        thumbsUp[i].style.transform = "translateY(0px)";
+        sleep(100).then(() => {
+            works = true;
+        });
+    });
+}
+
+for(let i = 0; i < thumbsDown.length; i++){
+    thumbsDown[i].addEventListener("mousedown", event => {
+        works = false;
+        thumbsDown[i].style.transform = "translateY(5px)";
+        thumbsDown[i].classList.add("selected");
+        thumbsUp[i].classList.remove("selected");
+    });
+    thumbsDown[i].addEventListener("mouseup", event => {
+        thumbsDown[i].style.transform = "translateY(0px)";
         sleep(100).then(() => {
             works = true;
         });
