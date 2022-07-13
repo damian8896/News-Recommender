@@ -89,7 +89,7 @@
 
             <div class="articles-outer dark">
                 <div class="articles-visual">
-                    <img class="articles-image" src="{% static 'images/220705-highland-park-shooting-mn-1536-ec291b.jpeg' %}" />
+                    <img class="articles-image" src="{{ article.image.url }}" />
                     <div class="articles-rating">
                         <svg class="thumbs up" width="40" height="39" viewBox="0 0 40 39" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -113,12 +113,9 @@
                     </div>
                 </div>
                 <div class="articles-info">
-                    <h3 class="articles-title">Highland Park shooting suspect's past is littered with 'red flags'
+                    <h3 class="articles-title"> {{ article.title }}
                     </h3>
-                    <p class="articles-description">HIGHLAND PARK, Ill. — A portrait of Robert “Bobby” E. Crimo III
-                        as a mysterious and music-obsessed loner began emerging Tuesday, a day after he was arrested
-                        in the wake of a mass shooting at a July Fourth parade that left seven dead and traumatized
-                        an affluent Chicago suburb.</p>
+                    <p class="articles-description"> {{ article.descr }}</p>
                 </div>
             </div>
 
